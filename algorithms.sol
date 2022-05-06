@@ -5,6 +5,8 @@ contract solAlgorithm {
     uint256[] public _dynamicArr;
     uint256[] public Array = [55, 45, 34 ,43, 10];
 
+    //BASIC ARRAY FUNCTIONS
+
     function getArr() public view returns(uint256[] memory) {
         return _dynamicArr;
     }
@@ -13,7 +15,7 @@ contract solAlgorithm {
         return _dynamicArr.length;
     }
 
-    function addElemen(uint256 _number) public returns(uint256[] memory) {
+    function addElement(uint256 _number) public returns(uint256[] memory) {
         _dynamicArr.push(_number);
         return _dynamicArr;
     }
@@ -70,5 +72,26 @@ contract solAlgorithm {
             }
         }
         return Array;
+    }
+
+    //SEARCH ALGORITHMS
+
+    function seqSearch(uint256[] memory arr, uint256 _number, uint256 size) internal view returns(uint256) {
+        if(size==0) return 99999;
+        if(arr[size-1]==_number) return size-1;
+        return seqSearch(arr, _number, size-1);
+    }
+
+    function callSeqSearch() public view returns(uint256) {
+        uint256 _result = seqSearch(_dynamicArr, 43, 5);
+        return _result;
+    }
+
+    function paramArray(uint256[] memory arr, uint256 index) internal pure returns(uint256) {
+        return arr[index];
+    }
+
+    function callParam(uint256 index) public view returns(uint256) {
+        return paramArray(Array, index);
     }
 }
