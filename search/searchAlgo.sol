@@ -14,4 +14,36 @@ contract searchAlgo {
         uint256 _result = seqSearch(_dynamicArr, _number, _dynamicArr.length);
         return _result;
     }
+
+
+	//A recursive aproach of the binary search algorithm
+	function binarySearch(uint256[] memory _arr, uint256 _number, uint low, uint high) public pure returns(uint256) {
+		 if (high >= low) {
+            uint mid = low + (high - low) / 2;
+
+            if (_arr[mid] == _number)
+            return mid;
+
+            if (_arr[mid] > _number)
+            return binarySearch(_arr, _number, low, mid - 1);
+
+            return binarySearch(_arr, _number, mid + 1, high);
+        }
+        return 99999;
+	}
+
+
+	//Without the need of a recursive function
+    function bSearchIterative(uint256[] memory _arr, uint256 _number) public pure returns(uint256) {
+        uint256 low = 0;
+        uint256 high = _arr.length-1;
+        while (high >= low) {
+            uint256 mid = low + (high - low) / 2;
+
+            if (_arr[mid] == _number) return mid;
+            if (_arr[mid] < _number) low = mid + 1;
+            else high = mid - 1;
+        }
+        return 99999;
+    }
 }
