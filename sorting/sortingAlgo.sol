@@ -20,7 +20,7 @@ contract sortingAlgo {
 
     //Bubble sorts an already defined array, changing its state to a sorted one.
     function bubbleSorter() public returns (uint256[] memory) {
-        uint length = Array.length;
+        uint length = Array.length; //'Array' is a placeholder, change to the array you want to change.
 
         for(uint i=0; i<length-1; i++) {
             for(uint j=0; j<length-1; j++) {
