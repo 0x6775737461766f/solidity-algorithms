@@ -41,4 +41,12 @@ library Search {
         }
         return 99999;
     }
+
+    //Function that returns true if the given number is present on the given array.
+    function isPresent(uint256[] memory _arr, uint256 _number) internal pure returns (bool) {
+        for (uint i = 0; i <_arr.length-1; i++) {
+            if (_arr[i] == _number) return true;
+        }
+        return false;
+    }
 }
