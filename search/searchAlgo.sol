@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-library searchAlgo {
+library Search {
 
 	//Recursive linear/sequential search.
     function seqSearch(uint256[] memory _arr, uint256 _number, uint256 size) internal view returns(uint256) {

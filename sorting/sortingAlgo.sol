@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-library sortingAlgo {
+library Sort {
 
     //Receives an entire array of elements and only sort them and return the result, not changing the state of the array.
     function bubbleSort(uint256[] memory _arr) internal pure returns (uint256[] memory) {
@@ -16,5 +16,4 @@ library sortingAlgo {
         }
         return _arr;
     }
-
 }
