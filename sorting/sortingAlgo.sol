@@ -17,33 +17,4 @@ library sortingAlgo {
         return _arr;
     }
 
-	//Complete binary search implementation, receives an array, the number to search for, the start index and the end index.
-    function binarySearch(uint256[] memory _arr, uint256 _number, uint low, uint high) internal pure returns(uint256) {
-		 if (high >= low) {
-            uint mid = low + (high - low) / 2;
-
-            if (_arr[mid] == _number)
-            return mid;
-
-            if (_arr[mid] > _number)
-            return binarySearch(_arr, _number, low, mid - 1);
-
-            return binarySearch(_arr, _number, mid + 1, high);
-        }
-        return 99999;
-	}
-
-    //Iterative version of binary search, easier to call, only receives the array and the number to look for as parameters.
-    function bSearch(uint256[] memory _arr, uint256 _number) public pure returns(uint256) {
-        uint256 low = 0;
-        uint256 high = _arr.length-1;
-        while (high >= low) {
-            uint256 mid = low + (high - low) / 2;
-
-            if (_arr[mid] == _number) return mid;
-            if (_arr[mid] < _number) low = mid + 1;
-            else high = mid - 1;
-        }
-        return 99999;
-    }
 }
