@@ -23,7 +23,6 @@ import "./{pathToSmartContract}.sol"
 bubbleSort(Array);
 
 #CODE
-
 {copy the library code below the Contract, and call each function};
 
 Sort.bubbleSort(Array);
