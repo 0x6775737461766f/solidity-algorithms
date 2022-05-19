@@ -21,6 +21,12 @@ import "./{pathToSmartContract}.sol"
 
 # returns a sorted array on memory.
 bubbleSort(Array);
+
+#CODE
+
+{copy the library code below the Contract, and call each function};
+
+Sort.bubbleSort(Array);
 ```
 
 ## Contributing
